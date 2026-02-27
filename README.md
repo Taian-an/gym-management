@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FitFlow - Gym Management System
 
-## Getting Started
+A full-stack gym management application built with **Next.js 15**, **TypeScript**, and **MongoDB**. This project features complex relational data handling, real-time capacity tracking, and deep data population.
 
-First, run the development server:
+## 👤 Developer
+- **Name:** Taian Chen (Taian-an)
+- **Student ID:** 6630027
+- **Major:** Computer Science
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 📊 Dashboard
+- Real-time statistics for total coaches, members, and active courses.
+- Quick action shortcuts and recent course activity list.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🏋️ Coach & Member Management
+- Full CRUD (Create, Read, Delete) operations for coaches and members.
+- Expertise tracking for coaches and contact management for members.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 📅 Course Management
+- Dynamic course creation with coach assignment (One-to-Many relationship).
+- Integrated **Capacity Tracking** that calculates real-time occupancy (e.g., 5/10 slots filled).
 
-## Learn More
+### 📝 Enrollment System
+- Secure enrollment logic with duplicate registration prevention.
+- **Deep Data Population**: Displays student, course, and assigned teacher names in a single view.
+- Automated "Full" status detection to disable enrollment for maxed-out courses.
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript (Strict Type Safety)
+- **Database:** MongoDB Atlas
+- **ORM:** Mongoose
+- **Styling:** Tailwind CSS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📂 Project Structure
 
-## Deploy on Vercel
+- `/app/api`: RESTful API routes handling MongoDB operations.
+- `/app/components`: Reusable UI components like the Global Navbar.
+- `/src/models`: Mongoose schemas for Members, Coaches, Courses, and Enrollments.
+- `/src/lib`: Database connection configuration.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ⚙️ Setup Instructions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Taian-an/gym-management.git](https://github.com/Taian-an/gym-management.git)
