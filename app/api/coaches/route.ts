@@ -59,3 +59,24 @@ export async function DELETE(req: Request) {
     return NextResponse.json({ success: false, error: errorMessage }, { status: 500 });
   }
 }
+
+export async function PUT(req: Request) {
+  try {
+    await connectDB();
+    const body = await req.json();
+    const { id, name, expertise } = body;
+
+    if (!id) return NextResponse.json({ success: false, message: "Missing ID" }, { status: 400 });
+
+    const updatedCoach = await Coach.findByIdAndUpdate(
+      id,
+      { name, expertise },
+      { new: true } // 回傳更新後的資料
+    );
+
+    return NextResponse.json({ success: true, data: updatedCoach });
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+    return NextResponse.json({ success: false, error: errorMessage }, { status: 500 });
+  }
+}

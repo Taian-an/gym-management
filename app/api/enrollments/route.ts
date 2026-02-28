@@ -30,11 +30,12 @@ export async function DELETE(req: Request) {
   try {
     await connectDB();
     const { searchParams } = new URL(req.url);
-    const id = searchParams.get('id');
+    const id = searchParams.get('id'); // 取得網址列中的報名 ID
+    
     if (!id) return NextResponse.json({ success: false, message: "Missing ID" }, { status: 400 });
-
-    await Enrollment.findByIdAndDelete(id);
-    return NextResponse.json({ success: true, message: "Enrollment cancelled" });
+    
+    await Enrollment.findByIdAndDelete(id); // 執行刪除
+    return NextResponse.json({ success: true });
   } catch (error: unknown) {
     const msg = error instanceof Error ? error.message : String(error);
     return NextResponse.json({ success: false, error: msg }, { status: 500 });
@@ -68,3 +69,4 @@ export async function POST(req: Request) {
     return NextResponse.json({ success: false, error: msg }, { status: 500 });
   }
 }
+

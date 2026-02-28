@@ -50,3 +50,15 @@ export async function DELETE(req: Request) {
     return NextResponse.json({ success: false, error: msg }, { status: 500 });
   }
 }
+
+export async function PUT(req: Request) {
+  try {
+    await connectDB();
+    const { id, name, phone } = await req.json();
+    const updatedMember = await Member.findByIdAndUpdate(id, { name, phone }, { new: true });
+    return NextResponse.json({ success: true, data: updatedMember });
+  } catch (error: unknown) {
+    const msg = error instanceof Error ? error.message : String(error);
+    return NextResponse.json({ success: false, error: msg }, { status: 500 });
+  }
+}

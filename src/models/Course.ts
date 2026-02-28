@@ -1,13 +1,11 @@
-import mongoose, { Schema, model, models } from 'mongoose';
+// src/models/Course.ts
+import mongoose from 'mongoose';
 
-const CourseSchema = new Schema({
+const courseSchema = new mongoose.Schema({
   title: { type: String, required: true },
-  capacity: { type: Number, default: 10 },
-  // 建立與 Coach 的關聯
-  coachId: { 
-    type: mongoose.Schema.Types.ObjectId, 
-    ref: 'Coach' 
-  },
+  capacity: { type: Number, required: true, default: 10 },
+  time: { type: String, required: true }, // 確保這是 String 或 Date
+  coachId: { type: mongoose.Schema.Types.ObjectId, ref: 'Coach' }
 }, { timestamps: true });
 
-export default models.Course || model('Course', CourseSchema);
+export default mongoose.models.Course || mongoose.model('Course', courseSchema);
