@@ -1,47 +1,45 @@
-# FitFlow - Gym Management System
+# FitFlow - Advanced Gym Management System
 
-A full-stack gym management application built with **Next.js 15**, **TypeScript**, and **MongoDB**. This project features complex relational data handling, real-time capacity tracking, and deep data population.
+A robust, full-stack gym management platform built with **Next.js 15 (App Router)**, **TypeScript**, and **MongoDB**. This project demonstrates advanced database relationships, real-time data integrity, and a professional user interface.
 
-## 👤 Developer
+## 👤 Developer Information
 - **Name:** Taian Chen (Taian-an)
 - **Student ID:** 6630027
 - **Major:** Computer Science
+- **GitHub:** [Taian-an](https://github.com/Taian-an)
 
-## 🚀 Features
+## 🚀 Key Features
 
-### 📊 Dashboard
-- Real-time statistics for total coaches, members, and active courses.
-- Quick action shortcuts and recent course activity list.
+### 📅 Advanced Course Scheduling
+- **Standardized Categories:** Supports 15+ fitness categories including Hyrox, CrossFit, and TRX.
+- **Native DatePicker:** Integrated `datetime-local` for precision scheduling and ISO-standard time storage.
+- **Capacity Control:** Automated tracking of enrolled students vs. maximum capacity (e.g., 8/10 slots).
 
-### 🏋️ Coach & Member Management
-- Full CRUD (Create, Read, Delete) operations for coaches and members.
-- Expertise tracking for coaches and contact management for members.
+### 🏋️ Professional Coach Management
+- **Multi-Expertise Selection:** Coaches can be assigned multiple specialties using an intuitive checkbox interface.
+- **Relational Integrity:** One-to-Many relationship between Coaches and Courses.
 
-### 📅 Course Management
-- Dynamic course creation with coach assignment (One-to-Many relationship).
-- Integrated **Capacity Tracking** that calculates real-time occupancy (e.g., 5/10 slots filled).
+### 📝 Enrollment & Membership
+- **Deep Data Population:** Enrollment view fetches data across Member, Course, and Coach collections simultaneously.
+- **Conflict Prevention:** Full-capacity courses are automatically disabled in the enrollment selection.
+- **Full CRUD Support:** Complete Create, Read, Update, and Delete capabilities for all modules.
 
-### 📝 Enrollment System
-- Secure enrollment logic with duplicate registration prevention.
-- **Deep Data Population**: Displays student, course, and assigned teacher names in a single view.
-- Automated "Full" status detection to disable enrollment for maxed-out courses.
+### 📊 Real-time Dashboard
+- Live statistics counting total members, coaches, and active courses.
 
 ## 🛠️ Tech Stack
 
-- **Framework:** Next.js (App Router)
+- **Framework:** Next.js 15 (App Router)
 - **Language:** TypeScript (Strict Type Safety)
 - **Database:** MongoDB Atlas
 - **ORM:** Mongoose
 - **Styling:** Tailwind CSS
 
-## 📂 Project Structure
+## 📂 System Architecture
 
-- `/app/api`: RESTful API routes handling MongoDB operations.
-- `/app/components`: Reusable UI components like the Global Navbar.
-- `/src/models`: Mongoose schemas for Members, Coaches, Courses, and Enrollments.
-- `/src/lib`: Database connection configuration.
 
-## ⚙️ Setup Instructions
+
+## ⚙️ Quick Start
 
 1. **Clone the repository:**
    ```bash
