@@ -6,7 +6,6 @@ A professional, full-stack gym management platform deployed on **Microsoft Azure
 - **Name:** Taian Chen (Taian-an)
 - **Student ID:** 6630027
 - **Major:** Computer Science
-- **Target Goals (2026):** Fluent in English/Thai, 3.5 GPA, and App Development Internship.
 
 ## ☁️ Cloud Infrastructure & Deployment
 This project has been successfully migrated from local development to a production-ready cloud environment:
