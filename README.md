@@ -1,46 +1,44 @@
-# FitFlow - Advanced Gym Management System
+# FitFlow - Advanced Gym Management System (Cloud Edition)
 
-A robust, full-stack gym management platform built with **Next.js 15 (App Router)**, **TypeScript**, and **MongoDB**. This project demonstrates advanced database relationships, real-time data integrity, and a professional user interface.
+A professional, full-stack gym management platform deployed on **Microsoft Azure**, utilizing **Next.js 15**, **TypeScript**, and **MongoDB Atlas**. This project showcases modern cloud infrastructure and automated service management.
 
 ## 👤 Developer Information
 - **Name:** Taian Chen (Taian-an)
 - **Student ID:** 6630027
 - **Major:** Computer Science
-- **GitHub:** [Taian-an](https://github.com/Taian-an)
+- **Target Goals (2026):** Fluent in English/Thai, 3.5 GPA, and App Development Internship.
 
-## 🚀 Key Features
+## ☁️ Cloud Infrastructure & Deployment
+This project has been successfully migrated from local development to a production-ready cloud environment:
 
-### 📅 Advanced Course Scheduling
-- **Standardized Categories:** Supports 15+ fitness categories including Hyrox, CrossFit, and TRX.
-- **Native DatePicker:** Integrated `datetime-local` for precision scheduling and ISO-standard time storage.
-- **Capacity Control:** Automated tracking of enrolled students vs. maximum capacity (e.g., 8/10 slots).
+- **Host:** Microsoft Azure Virtual Machine (Ubuntu 22.04 LTS).
+- **Reverse Proxy:** Nginx configured for Port 80 to Port 3000 forwarding.
+- **Process Manager:** PM2 (with systemd integration) for 24/7 service uptime and auto-restart on reboot.
+- **Database:** MongoDB Atlas with IP Whitelisting for secure Azure VM access.
+- **Networking:** Static Public IP assigned with specialized Inbound Security Rules (Port 80/22).
 
-### 🏋️ Professional Coach Management
-- **Multi-Expertise Selection:** Coaches can be assigned multiple specialties using an intuitive checkbox interface.
-- **Relational Integrity:** One-to-Many relationship between Coaches and Courses.
+## 🚀 System Features
 
-### 📝 Enrollment & Membership
-- **Deep Data Population:** Enrollment view fetches data across Member, Course, and Coach collections simultaneously.
-- **Conflict Prevention:** Full-capacity courses are automatically disabled in the enrollment selection.
-- **Full CRUD Support:** Complete Create, Read, Update, and Delete capabilities for all modules.
+### 📅 Smart Scheduling & Enrollment
+- **Standardized Categories:** 15+ fitness types (CrossFit, Hyrox, Yoga, etc.).
+- **Native DatePicker:** Precise ISO-standard scheduling.
+- **Capacity Management:** Real-time tracking of student-to-coach ratios.
+- **Enrollment CRUD:** Full management of member-course relationships with delete capabilities.
 
-### 📊 Real-time Dashboard
-- Live statistics counting total members, coaches, and active courses.
+### 🏋️ Coach & Member Management
+- **Multi-Expertise Selection:** Coaches can be assigned multiple skillsets.
+- **Relational Integrity:** One-to-many relationship mapping between Coaches and Courses.
 
 ## 🛠️ Tech Stack
-
 - **Framework:** Next.js 15 (App Router)
-- **Language:** TypeScript (Strict Type Safety)
-- **Database:** MongoDB Atlas
-- **ORM:** Mongoose
-- **Styling:** Tailwind CSS
+- **Language:** TypeScript
+- **Database:** MongoDB (via Mongoose)
+- **Deployment:** Azure VM, Nginx, PM2, GitHub
 
-## 📂 System Architecture
+## 📂 Deployment Guide (VM Quick Start)
 
-
-
-## ⚙️ Quick Start
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/Taian-an/gym-management.git](https://github.com/Taian-an/gym-management.git)
+1. **Access Server:** `ssh -i your_key.pem azureuser@your_static_ip`
+2. **Environment:** Ensure `.env` contains `MONGODB_URI`.
+3. **Build:** `npm run build`
+4. **Service Start:** `pm2 start npm --name "fitflow" -- start`
+5. **Auto-Start:** `pm2 save`
